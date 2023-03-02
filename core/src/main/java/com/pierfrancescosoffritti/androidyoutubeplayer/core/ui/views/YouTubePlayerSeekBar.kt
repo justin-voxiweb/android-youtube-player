@@ -145,7 +145,7 @@ class YouTubePlayerSeekBar(context: Context, attrs: AttributeSet? = null): Linea
     }
 
     override fun onReady(youTubePlayer: YouTubePlayer) { }
-    override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String) { }
+    override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String, index: Int) { }
     override fun onApiChange(youTubePlayer: YouTubePlayer) { }
     override fun onPlaybackQualityChange(youTubePlayer: YouTubePlayer, playbackQuality: PlayerConstants.PlaybackQuality) { }
     override fun onPlaybackRateChange(youTubePlayer: YouTubePlayer, playbackRate: PlayerConstants.PlaybackRate) { }

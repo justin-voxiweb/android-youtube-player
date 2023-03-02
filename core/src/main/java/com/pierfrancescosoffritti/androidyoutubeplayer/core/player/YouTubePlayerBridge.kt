@@ -164,10 +164,18 @@ class YouTubePlayerBridge(private val youTubePlayerOwner: YouTubePlayerBridgeCal
     }
 
     @JavascriptInterface
-    fun sendVideoId(videoId: String) {
+    fun sendVideoId(videoId: String, index: String) {
+        val indexInt: Int
+        try {
+            indexInt = index.toInt()
+        } catch (e: NumberFormatException) {
+            e.printStackTrace()
+            return
+        }
+
         mainThreadHandler.post {
             for (listener in youTubePlayerOwner.getListeners())
-                listener.onVideoId(youTubePlayerOwner.getInstance(), videoId)
+                listener.onVideoId(youTubePlayerOwner.getInstance(), videoId, indexInt)
         }
     }
 

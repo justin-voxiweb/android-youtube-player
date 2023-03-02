@@ -18,6 +18,8 @@ class YouTubePlayerTracker : AbstractYouTubePlayerListener() {
         private set
     var videoDuration: Float = 0f
         private set
+    var videoIndex: Int = 0
+        private set
     var videoId: String? = null
         private set
 
@@ -33,7 +35,8 @@ class YouTubePlayerTracker : AbstractYouTubePlayerListener() {
         videoDuration = duration
     }
 
-    override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String) {
+    override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String, index: Int) {
         this.videoId = videoId
+        this.videoIndex = index
     }
 }

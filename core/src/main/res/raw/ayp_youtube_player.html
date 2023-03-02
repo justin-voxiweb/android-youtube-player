@@ -106,7 +106,7 @@
                 if ( typeof playlist !== 'undefined' && Array.isArray(playlist) && playlist.length > 0 ) {
                     var index = player.getPlaylistIndex();
                     var videoId = playlist[index];
-                    YouTubePlayerBridge.sendVideoId(videoId);
+                    YouTubePlayerBridge.sendVideoId(videoId, index);
                 }
             }
 
@@ -128,6 +128,14 @@
         	player.seekTo(startSeconds, true);
         }
 
+        function nextVideo() {
+            player.nextVideo();
+        }
+
+        function previousVideo() {
+            player.previousVideo();
+        }
+
         function pauseVideo() {
         	player.pauseVideo();
         }
@@ -138,12 +146,12 @@
 
         function loadVideo(videoId, startSeconds) {
             player.loadVideoById(videoId, startSeconds);
-            YouTubePlayerBridge.sendVideoId(videoId);
+            YouTubePlayerBridge.sendVideoId(videoId, 0);
         }
 
         function cueVideo(videoId, startSeconds) {
             player.cueVideoById(videoId, startSeconds);
-            YouTubePlayerBridge.sendVideoId(videoId);
+            YouTubePlayerBridge.sendVideoId(videoId, 0);
         }
 
         function mute() {

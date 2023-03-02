@@ -80,6 +80,14 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
         mainThreadHandler.post { loadUrl("javascript:setPlaybackRate(${playbackRate.toFloat()})") }
     }
 
+    override fun nextVideo() {
+        mainThreadHandler.post { loadUrl("javascript:nextVideo()") }
+    }
+
+    override fun previousVideo() {
+        mainThreadHandler.post { loadUrl("javascript:previousVideo()") }
+    }
+
     override fun destroy() {
         youTubePlayerListeners.clear()
         mainThreadHandler.removeCallbacksAndMessages(null)

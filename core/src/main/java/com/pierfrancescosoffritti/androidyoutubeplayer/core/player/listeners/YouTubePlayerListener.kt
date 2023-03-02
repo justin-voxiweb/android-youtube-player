@@ -57,7 +57,7 @@ interface YouTubePlayerListener {
      * Called when the id of the current video is loaded
      * @param videoId the id of the video being played
      */
-    fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String)
+    fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String, index:Int)
 
     fun onApiChange(youTubePlayer: YouTubePlayer)
 }

@@ -55,7 +55,7 @@ internal class PlaybackResumer : AbstractYouTubePlayerListener() {
         currentSecond = second
     }
 
-    override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String) {
+    override fun onVideoId(youTubePlayer: YouTubePlayer, videoId: String, index: Int) {
         currentVideoId = videoId
     }
 
